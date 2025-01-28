@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>計算フォーム</title>
+    <style>
+        #error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>計算フォーム</h1>
+    <form th:action="@{/calculate}" method="post">
+        <input type="text" id="left-value" name="leftValue" placeholder="左側の数値を入力">
+        <span>+</span>
+        <input type="text" id="right-value" name="rightValue" placeholder="右側の数値を入力">
+        <span>=</span>
+        <span id="result" th:text="${result}"></span>
+        <button type="submit">計算</button>
+        <div id="error-message" th:text="${errorMessage}"></div>
+    </form>
+</body>
+</html>
