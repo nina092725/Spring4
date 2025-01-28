@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>以下の内容で登録しました。回答ありがとうございました</h1>
+    <div th:object="${questionnaire}">
+    名前：<span th:text="*{name}">dummy</span><br>
+    メールアドレス：<span th:text="*{email}">dummy</span><br>
+    性別：<span th:text="*{gender}">dummy</span><br>
+    趣味：
+    <span th:each="hobby : *{hobbyList}">
+        <span th:text="${hobby}">dummy</span>&nbsp;
+    </span><br>
+    好きな言語：<span th:text="*{lang}">dummy</span><br>
+    その他：<br>
+    <pre th:text="*{other}">dummy</pre>
+    </div>
+</body>
+</html>
